@@ -1,29 +1,18 @@
-﻿var dias = new Dictionary<int, string>
-{
-    { 1, "Segunda"},
-    { 2, "Terça"},
-    { 3, "Quarta" },
-    { 4, "Quinta" },
-    { 5, "Sexta" },
-    { 6 , "Sábado" },
-    { 7, "Domingo" }
-};
-
-abstract class Missa
+﻿abstract class Missa
 {
     public int Id { get; set; }
     
-    public required string Dia { get; set; }
-    public required string Data { get; set; }
-    public required string Horario { get; set; }
+    public string? Dia { get; set; }
+    public string? Data { get; set; }
+    public string? Horario { get; set; }
     public abstract int[] Acolitos { get; set; }
     public abstract int[] Coroinhas {get; set;}
 }
 
 class MissaSemana : Missa
 {
-    public override required int[] Acolitos { get; set;}
-    public override required int[] Coroinhas { get; set;}
+    public override int[] Acolitos { get; set;}
+    public override int[] Coroinhas { get; set;}
 
     public MissaSemana(int id, string dia, string data, string horario, int acolito, int[] coroinhas)
     {
@@ -38,8 +27,8 @@ class MissaSemana : Missa
 
 class MissaFimSemana : Missa
 {
-    public override required int[] Acolitos { get; set;}
-    public override required int[] Coroinhas { get; set;}
+    public override int[] Acolitos { get; set;}
+    public override int[] Coroinhas { get; set;}
 
     public MissaFimSemana(int id, string dia, string data, string horario, int[] acolitos, int[] coroinhas)
     {
@@ -50,4 +39,23 @@ class MissaFimSemana : Missa
         Acolitos = acolitos;
         Coroinhas = coroinhas;
     }
+}
+
+class Program
+{
+    static Dictionary<int, string> dias = new Dictionary<int, string>
+    {
+        { 1, "Segunda"},
+        { 2, "Terça"},
+        { 3, "Quarta" },
+        { 4, "Quinta" },
+        { 5, "Sexta" },
+        { 6 , "Sábado" },
+        { 7, "Domingo" }
+    };
+
+    static void Main()
+    {
+    }
+
 }
