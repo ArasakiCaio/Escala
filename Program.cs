@@ -198,11 +198,11 @@ class Program
         int count = 0;
         for (int i = 1; i <= meses[numMes].Dias; i+=7)
         {
-            Console.WriteLine($"\n{count}a Semana do Mês");
+            Console.WriteLine($"\n{count+1}a Semana do Mês");
             Mes[count] = new Semana(dias, i, numMes, meses[numMes].Dias);
             count++;
         }
-        
+
         return Mes;
     }
 
