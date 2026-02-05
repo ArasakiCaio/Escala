@@ -48,10 +48,22 @@ class Semana
     public MissaSemana[] missasDaSemana { get; set; } = new MissaSemana[5];
     public MissaFimSemana[] missasDoFimSemana { get; set; } = new MissaFimSemana[3];
 
-    public Semana(Dictionary<int, string> dias, int inicioSemana, int mes, int diasMes)
+    public Semana(Dictionary<int, string> dias, int inicioSemana, int mes, int diasMes, int diaSemanaInicio, bool semana1)
     {
         int countID = 1;
-        int count = 1;
+        int count;
+        int dateCount;
+
+        if(semana1)
+        {
+            count = diaSemanaInicio;
+        }
+        else
+        {
+            count = 1;
+        }
+
+        dateCount = 0;
 
         do
         {
@@ -59,28 +71,29 @@ class Semana
             {
                 if(count != 5)
                 {
-                    missasDaSemana[count-1] = new MissaSemana(countID, dias[count], ConvertDateToString(inicioSemana + (count-1), mes), "19:00", 1, new int[] { 1, 2, 3, 4, 5, 6 });
+                    missasDaSemana[count-1] = new MissaSemana(countID, dias[count], ConvertDateToString(inicioSemana + dateCount, mes), "19:00", 1, new int[] { 1, 2, 3, 4, 5, 6 });
                 }
                 else
                 {
-                    missasDaSemana[count-1] = new MissaSemana(countID, dias[count], ConvertDateToString(inicioSemana + (count-1), mes), "15:00", 1, new int[] { 1, 2, 3, 4, 5, 6 });
+                    missasDaSemana[count-1] = new MissaSemana(countID, dias[count], ConvertDateToString(inicioSemana + dateCount, mes), "15:00", 1, new int[] { 1, 2, 3, 4, 5, 6 });
                 }
                 
                 countID++;
             }
             else if (count < 7)
             {
-                missasDoFimSemana[0] = new MissaFimSemana(countID, dias[count], ConvertDateToString(inicioSemana + (count-1), mes), "19:00", new int[] { 1, 2, 3 }, new int[] { 1, 2, 3, 4, 5, 6 }); 
+                missasDoFimSemana[0] = new MissaFimSemana(countID, dias[count], ConvertDateToString(inicioSemana + dateCount, mes), "19:00", new int[] { 1, 2, 3 }, new int[] { 1, 2, 3, 4, 5, 6 }); 
                 countID++;
             }
             else
             {
-                missasDoFimSemana[1] = new MissaFimSemana(countID, dias[count], ConvertDateToString(inicioSemana + (count-1), mes), "09:30", new int[] { 1, 2, 3 }, new int[] { 1, 2, 3, 4, 5, 6 });
-                missasDoFimSemana[2] = new MissaFimSemana(countID, dias[count], ConvertDateToString(inicioSemana + (count-1), mes), "19:00", new int[] { 1, 2, 3 }, new int[] { 1, 2, 3, 4, 5, 6 }); 
+                missasDoFimSemana[1] = new MissaFimSemana(countID, dias[count], ConvertDateToString(inicioSemana + dateCount, mes), "09:30", new int[] { 1, 2, 3 }, new int[] { 1, 2, 3, 4, 5, 6 });
+                missasDoFimSemana[2] = new MissaFimSemana(countID, dias[count], ConvertDateToString(inicioSemana + dateCount, mes), "19:00", new int[] { 1, 2, 3 }, new int[] { 1, 2, 3, 4, 5, 6 }); 
                countID++;
             }
 
             count++;
+            dateCount++;
         }while( (count < 8) && ((inicioSemana + (count-1)) <= diasMes) );
 
         PrintSemana(missasDaSemana, missasDoFimSemana);
@@ -184,23 +197,59 @@ class Program
 
     public static Semana[] CriarMes()
     {
-        Console.WriteLine("Qual é o mês da escala que será gerada?");
+        Semana[] Mes = new Semana[5];
+        int numMes;
+        int diaSemanaInicio;
 
+        Console.WriteLine("Qual é o mês da escala que será gerada?");
         foreach(var aux in meses)
         {
             Console.WriteLine($"{aux.Key} - {aux.Value.Mes}");
         }
+
         Console.Write("Digite o número do mês: ");
-        int numMes = Convert.ToInt32(Console.ReadLine());
+        numMes = Convert.ToInt32(Console.ReadLine());
 
-        Semana[] Mes = new Semana[5];
-
-        int count = 0;
-        for (int i = 1; i <= meses[numMes].Dias; i+=7)
+        Console.WriteLine("\nQual dia da semana o mês começa?");
+        foreach(var aux in dias)
         {
-            Console.WriteLine($"\n{count+1}a Semana do Mês");
-            Mes[count] = new Semana(dias, i, numMes, meses[numMes].Dias);
-            count++;
+            Console.WriteLine($"{aux.Key} - {aux.Value}");
+        }
+
+        Console.Write("Digite o número do dia da semana: ");
+        diaSemanaInicio = Convert.ToInt32(Console.ReadLine());
+
+
+        int semaDoMes = 0;
+        int diaDoMes = 1;
+        bool flag = true;
+
+        while(diaDoMes <= meses[numMes].Dias)
+        {
+            if(diaSemanaInicio == 6 || diaSemanaInicio == 7)
+            {
+                if(diaSemanaInicio == 6)
+                {
+                    diaDoMes++;
+                }
+                diaDoMes++;
+
+                diaSemanaInicio = 1;
+            }
+
+            Console.WriteLine($"\n{semaDoMes+1}a Semana do Mês");
+            Mes[semaDoMes] = new Semana(dias, diaDoMes, numMes, meses[numMes].Dias, diaSemanaInicio, flag);
+            semaDoMes++;
+            
+            if(flag)
+            {
+                diaDoMes += (7 - (diaSemanaInicio-1));
+            }
+            else
+            {
+                diaDoMes += 7;
+            }
+            flag = false;
         }
 
         return Mes;
