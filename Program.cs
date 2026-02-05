@@ -106,9 +106,14 @@ class Semana
         string Dia = dia.ToString();
         string Mes = mes.ToString();
 
+        if(dia < 10)
+        {
+            Dia = $"0{Dia}";
+        }
+
         if (mes < 10)
         {
-           dateString = $"{Dia}/0{Mes}"; 
+            dateString = $"{Dia}/0{Mes}"; 
         }
         else
         {
