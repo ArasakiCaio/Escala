@@ -97,7 +97,7 @@ class Semana
             dateCount++;
         }while( (count < 8) && ((inicioSemana + (count-1)) <= diasMes) );
 
-        if((inicioSemana + (count-1)) > diasMes)
+        if(((inicioSemana + (count-1)) > diasMes) && count > 5)
         {
             int diaUltimoFimSemana = 1;
             if(count == 6)
