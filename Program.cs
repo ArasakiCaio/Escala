@@ -88,13 +88,30 @@ class Semana
             else
             {
                 missasDoFimSemana[1] = new MissaFimSemana(countID, dias[count], ConvertDateToString(inicioSemana + dateCount, mes), "09:30", new int[] { 1, 2, 3 }, new int[] { 1, 2, 3, 4, 5, 6 });
+                countID++;
                 missasDoFimSemana[2] = new MissaFimSemana(countID, dias[count], ConvertDateToString(inicioSemana + dateCount, mes), "19:00", new int[] { 1, 2, 3 }, new int[] { 1, 2, 3, 4, 5, 6 }); 
-               countID++;
+                countID++;
             }
 
             count++;
             dateCount++;
         }while( (count < 8) && ((inicioSemana + (count-1)) <= diasMes) );
+
+        if((inicioSemana + (count-1)) > diasMes)
+        {
+            int diaUltimoFimSemana = 1;
+            if(count == 6)
+            {
+                missasDoFimSemana[0] = new MissaFimSemana(countID, dias[count], ConvertDateToString(diaUltimoFimSemana, mes+1), "19:00", new int[] { 1, 2, 3 }, new int[] { 1, 2, 3, 4, 5, 6 }); 
+                diaUltimoFimSemana++;
+                countID++;
+                count++;
+            }
+
+            missasDoFimSemana[1] = new MissaFimSemana(countID, dias[count], ConvertDateToString(diaUltimoFimSemana, mes+1), "09:30", new int[] { 1, 2, 3 }, new int[] { 1, 2, 3, 4, 5, 6 });
+            countID++;
+            missasDoFimSemana[2] = new MissaFimSemana(countID, dias[count], ConvertDateToString(diaUltimoFimSemana, mes+1), "19:00", new int[] { 1, 2, 3 }, new int[] { 1, 2, 3, 4, 5, 6 }); 
+        }
 
         PrintSemana(missasDaSemana, missasDoFimSemana);
     }
