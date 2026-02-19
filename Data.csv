@@ -1,3 +1,60 @@
 Id,Tipo,Nome,isNovo,Disponibilidade,Irmaos
-1,Coroinha,Abc,True,1;2;3;4;5;6;7;8,2
-2,Acolito,Bcd,False,6;7;8,1
+1,Coroinha,Allana de Oliveira Martins,FALSE,1;2;3;4;7;8,
+2,Coroinha,Miguel Bueno Teixeira,TRUE,1;2;3;4;7;8,
+3,Coroinha,Anna Sofia,FALSE,1;2;3;4;7;8,
+4,Acolito,Saymon Gabriel,FALSE,6;7;8,9
+5,Coroinha,Fernanda Aparecida Facina,TRUE,3;4;5;6;7;8,
+6,Acolito,Eloisa Fresatto Jacomini,FALSE,1;2;3;4;5;6;7;8,
+7,Coroinha,Laura gigi petita,FALSE,1;2;3;6;7;8,
+8,Coroinha,Pietro Henrique Da Costa Ferreira,FALSE,1;2;3;5;6;7;8,55
+9,Coroinha,Rayane Gabriela Garcia Woehl,FALSE,6;8,
+10,Coroinha,Rebeca Rafaela jesus da Silva,FALSE,6;7;8,
+11,Coroinha,Cecília Ortiz Félix,FALSE,1;3;4;5;6;7;8,
+12,Acolito,Ana Gabrielly Caldeira Lima,FALSE,6;7;8,
+13,Coroinha,Adryan,TRUE,1;2;3;4;5;6;7;8,56
+14,Coroinha,Ana Livia dos Anjos,TRUE,1;3;4;6;8,
+15,Coroinha,Rafael Fressatto Diman,FALSE,1;3;4;6;7;8,57
+16,Coroinha,Eloiza Shon Gonçalves,TRUE,1;2;3;4;6;7;8,
+17,Acolito,Lívia Raquel Silva Hidalgo,FALSE,5;6;7;8,58
+18,Acolito,Nathália Caversan Lopes,FALSE,6;7;8,
+19,Coroinha,Maria Teresa,FALSE,1;2;3;4;5;6;7;8,
+20,Acolito,Lívia Furini,FALSE,6;7,
+21,Coroinha,Bernardo,FALSE,1;2;3;4;5;6;7;8,
+22,Acolito,Eloisa Fresatto Jacomini,TRUE,2;4;5;6;7;8,
+23,Coroinha,Gabriel Fachina Nalin,FALSE,1;3;4;6;7;8,59
+24,Acolito,William nalin,FALSE,6;7,
+25,Coroinha,Isadora Veri Borges,TRUE,6;7;8,
+26,Coroinha,Ana Luiza Oliveira da Silva,TRUE,1;3;4;6;7;8,
+27,Acolito,Karla Antonia Galvão Ferreira,FALSE,6;7;8,
+28,Coroinha,Kethelyn vitoria da silva,TRUE,1;2;3;4;6;7;8,
+29,Coroinha,Arthur,FALSE,1;2;3;4;5;6;7;8,60
+30,Acolito,Cíntia dos Santos de Oliveira,FALSE,1;2;3;4;7,
+31,Coroinha,Mariana Barbosa Romagnoli,FALSE,1;3;4;6;7,
+32,Coroinha,Anna Lívia de Melo Prina,FALSE,1;2;3;4;5;6;7;8,
+33,Acolito,Ariane Castilholi da Silva,FALSE,1;3;4;5;6;8,47
+34,Acolito,Beatriz Reck,TRUE,2;4;5;6;7;8,
+35,Coroinha,Maria Letícia Paduan de Souza,FALSE,3;6;7;8,
+36,Acolito,Gustavo Milbauer de Medeiros,FALSE,1;3;5;6;7;8,
+37,Coroinha,Victor Augusto Mesti Bijari,TRUE,3;4;6;7;8,
+38,Acolito,Lara Oliveira de Araújo,TRUE,1;3;4;5;6;7;8,
+39,Acolito,Daniel dos Santos Borean,TRUE,1;2;4;5;6;7;8,
+40,Coroinha,Nicolas Gabriel Roes Batista,FALSE,1;2;4;5;6;7;8,
+41,Acolito,Laura,TRUE,2;3;6;7;8,61
+42,Acolito,maria fernanda,TRUE,3;6;7;8,
+43,Coroinha,Joaquim Rossi Valentini Dias,TRUE,1;3;4;5;6;7;8,
+44,Acolito,Vitória Sophia Ventaja de Souza,TRUE,1;2;3;4;6;7;8,
+45,Coroinha,Petrick Raphael de Avila Seniz,FALSE,1;2;4;6;7;8,
+46,Coroinha,Beatriz de Araújo Souza,FALSE,1;3;5;6;7,
+47,Coroinha,Ygor Filipe Silva De Souza,TRUE,1;2;3;4;6;7;8,
+48,Coroinha,Yasmin Romagnole,FALSE,1;2;3;4;6;7;8,50
+49,Coroinha,Maria Izabel Santos Evangelista,TRUE,1;3;5;6;7;8,
+50,Acolito,Allana Romagnole Galvão,FALSE,1;4;6;7;8,48
+51,Acolito,Valentina Fernandes Fressato,TRUE,1;2;3;5;7;8,
+52,Coroinha,Daniel Lucas Pereira de Oliveira,FALSE,3;4;6;7;8,
+54,Acolito,Joey Gabriel Gonçalves Rocha,FALSE,1;3;4;5;6;7;8,8
+55,Coroinha,Miguel,TRUE,1;2;3;4;5;6;7;8,13
+56,Acolito,Arthur Fressatto Diman,FALSE,6;7;8,15
+57,Acolito,Lucas Hidalgo,FALSE,1;3;5;6;7;8,17
+58,Acolito,Maria Paula Fachina Nalin,TRUE,1;3;4;5;6;7;8,23
+59,Coroinha,Laura,TRUE,1;2;3;4;6;7;8,29
+61,Coroinha,Renan,TRUE,2;3;6;7;8,41
