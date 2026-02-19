@@ -41,6 +41,10 @@ namespace PlanilhaFunctions
 
         public static int[] StringToIntArray(string[] input)
         {
+            if (input.Length == 1 && input[0] == "")
+            {
+                return new int[0];
+            }
             List<int> result = new List<int>();
             foreach (string str in input)
             {
