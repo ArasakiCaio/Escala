@@ -1,5 +1,3 @@
-using Semanas;
-
 namespace Integrantes
 {
     class Integrante
